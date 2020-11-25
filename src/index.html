@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Amaelleleroy</title>
+  <title>Amaelle Leroy - Photographie</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript" src="assets/js/instafeed.min.js"></script>
 </head>
 <body>
   <app-root></app-root>
+  <div id="instafeed" style="display: none"></div>
+
+  <script type="text/javascript">
+      var feed = new Instafeed({
+        accessToken: 'IGQVJWaEJxNTRnVC1rbDhjY09KcERSZAmFpMnFnQ1pOUWt0TzlvM1h0Nkd5TndLT0kxLTIxUVFuUklaWjJXZA1ZArZATZAMc2I0NXVVY0REU0JxYzBLcDhMLUVKS29sbmdmZA2hrNHExUkZAR'
+      });
+      feed.run();
+  </script>
 </body>
 </html>
