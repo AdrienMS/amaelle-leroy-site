@@ -1,0 +1,15 @@
+<h1 class="title">Demande de contact</h1>
+<div class="contact" *ngIf="(contacts$ | async) as contacts">
+    <div class="list">
+        <table class="table">
+            <ng-container *ngFor="let contact of contacts; let i = index">
+                <tr [ngClass]="{'not-read': !contact.isRead, 'selected': selected === i}" (click)="changeSelect(i, contact)">
+                    <td>{{contact.transmitter}}</td>
+                    <td>{{contact.category}}</td>
+                    <td>{{contact.date | date:'dd/MM/yyyy'}}</td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+    <div class="content" [innerHTML]="contacts[selected].content | safeHtml"></div>
+</div>

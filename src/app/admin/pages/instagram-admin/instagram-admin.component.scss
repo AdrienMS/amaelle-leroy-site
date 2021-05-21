@@ -1,0 +1,27 @@
+@import '../../../../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-icons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
+
+.title {
+    font-family: "Montserra", sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+.insta {
+    margin: 10px;
+    .instagram-token {
+        width: 30%;
+    }
+    .btn {
+        margin: 10px;
+    }
+}

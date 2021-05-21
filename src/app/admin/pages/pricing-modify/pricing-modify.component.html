@@ -1,0 +1,54 @@
+<h1 class="title">Prestations</h1>
+<div class="right">
+    <button class="btn save" (click)="savePricings()">Sauvegarder</button>
+</div>
+
+<section>
+    <div class='pricing pricing-palden' *ngIf="(pricing$ | async) && (categories$ | async) as categories">
+        <div class="pricing-table" *ngFor="let pricing of pricingsModify; let p = index">
+            <div class="pricing-head">
+                <mat-form-field appearance="legacy" class="pricing-title">
+                    <textarea matInput placeholder="Prestation" [(ngModel)]="pricing.name"></textarea>
+                </mat-form-field>
+            </div>
+            <p class="pricing-divider">-</p>
+            <div class="pricing-feature">
+                <mat-form-field appearance="legacy">
+                    <mat-chip-list
+                        #chipList
+                        aria-label="Description selection"
+                        cdkDropList 
+                        cdkDropListOrientation="vertical"
+                        (cdkDropListDropped)="drop($event, p)">
+                        <mat-chip
+                            *ngFor="let item of pricing.items; let i = index"
+                            [selectable]="true"
+                            [removable]="true"
+                            (removed)="removeItem(p, i)"
+                            class="chip-modify"
+                            cdkDrag>
+                            {{item}}
+                            <mat-icon matChipRemove>cancel</mat-icon>
+                        </mat-chip>
+                        <input
+                            #fruitInput
+                            [(ngModel)]="newDesc[p]"
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            (matChipInputTokenEnd)="add($event, p)">
+                    </mat-chip-list>
+                </mat-form-field>
+            </div>
+            <p class="pricing-divider">;</p>
+            <div class="pricing-price">
+                <span class='pricing-price-currency'>€</span>
+                <mat-form-field appearance="legacy" floatLabel="never">
+                    <input matInput type="text" placeholder="500" [(ngModel)]="pricing.price">
+                </mat-form-field>
+            </div>
+            <p class="pricing-footer">o</p>
+            <button class="btn delete" (click)="deletePricing(p)">Supprimer</button>
+        </div>
+    </div>
+</section>
+<button class="btn fab" (click)="addPricing()"><span>+</span></button>

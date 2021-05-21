@@ -1,0 +1,10 @@
+<h2 class="title">Galeries</h2>
+<div class="galleries-list">
+    <ng-container *ngFor="let gallery of (galleries$ | async)">
+        <a *ngIf="gallery.isPublish" [routerLink]="gallery.url" routerLinkActive="router-link-active" class="card" [defaultImage]="defaultImage" [lazyLoad]="gallery.highlighted">
+            <div class="name">
+                <span>{{ gallery.name }}</span>
+            </div>
+        </a>
+    </ng-container>
+</div>

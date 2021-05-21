@@ -1,0 +1,16 @@
+<div class="about">
+    <h2 class="title">À propos</h2>
+    <div class="right">
+        <button class="btn btn-outline-primary" (click)="saveAbout()">Sauvegarder</button>
+    </div>
+    <div class="content" *ngIf="about$ | async">
+        <div class="photo-modify">
+            <img [defaultImage]="aboutModify.photo.pixelized" [lazyLoad]="aboutModify.photo.thumbnail" alt="profil" class="photo">
+            <button class="btn modify" (click)="toggleDisplayScreen()">
+                <fa-icon [icon]="faPencilAlt"></fa-icon>
+            </button>
+        </div>
+        <ejs-richtexteditor id='defaultRTE' [fontFamily]='fontFamily' [toolbarSettings]='tools' [(ngModel)]="aboutModify.description"></ejs-richtexteditor>
+    </div>
+</div>
+<app-select-image [displayScreen]='showSelectedImage' [single]='single' (emitSelectedImages)='getNewImages($event)' (closing)="toggleDisplayScreen()"></app-select-image>

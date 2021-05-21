@@ -1,0 +1,18 @@
+<h1 class="title">Categories</h1>
+<div class="right">
+    <button class="btn save" (click)="saveCategories()">Sauvegarder</button>
+</div>
+<div class="categories" *ngIf="categories$ | async">
+    <div class="link" *ngFor="let category of categoriesModify; let i = index">
+        <div class="category" *ngIf="category.photo; else NoPhoto" [defaultImage]="category.photo.pixelized" [lazyLoad]="category.photo.full" (click)="selectImage(i)">
+            <input type="text" class="title" [(ngModel)]="category.name" (click)="stopPropagation($event)">
+        </div>
+        <ng-template #NoPhoto>
+            <div class="category" (click)="selectImage(i)">
+                <input type="text" class="title" [(ngModel)]="category.name" (click)="stopPropagation($event)">
+            </div>
+        </ng-template>
+    </div>
+</div>
+<button class="btn fab" (click)="addCategory()"><span>+</span></button>
+<app-select-image [displayScreen]='showSelectedImage' [single]='single' (emitSelectedImages)='getNewImages($event)' (closing)="toggleDisplayScreen()"></app-select-image>

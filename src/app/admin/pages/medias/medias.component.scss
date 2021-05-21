@@ -1,0 +1,14 @@
+.medias {
+    .head {
+        padding: 20px;
+        text-align: left;
+        .title {
+            font-family: "Montserra";
+            font-size: 30px;
+            margin-bottom: 10px;
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

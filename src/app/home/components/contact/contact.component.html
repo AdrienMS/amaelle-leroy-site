@@ -1,0 +1,32 @@
+<h2 class="title">Me contacter</h2>
+<div class="contact row">
+    <div class="container-form col-md-9 col-12">
+        <form class="form row" [formGroup]="contactForm">
+            <mat-form-field class="field col-md-6 col-12">
+                <mat-label class="label">Email</mat-label>
+                <input matInput placeholder="pat@example.com" formControlName="email" required>
+                <mat-error *ngIf="contactForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+            </mat-form-field>
+            <mat-form-field class="field col-md-6 col-12">
+                <mat-label class="label">Nom, prénom</mat-label>
+                <input matInput placeholder="John Doe" formControlName="name" required>
+                <mat-error *ngIf="contactForm.get('name').invalid">{{getErrorMessage('name')}}</mat-error>
+            </mat-form-field>
+            <mat-form-field class="field col-md-6 col-12">
+                <mat-label class="label">Téléphone</mat-label>
+                <input matInput type="tel" placeholder="01******42" formControlName="phone" required>
+                <mat-error *ngIf="contactForm.get('phone').invalid">{{getErrorMessage('phone')}}</mat-error>
+            </mat-form-field>
+            <mat-form-field class="content col-12">
+                <mat-label class="label">Votre message</mat-label>
+                <textarea matInput formControlName="content" required></textarea>
+                <mat-error *ngIf="contactForm.get('content').invalid">{{getErrorMessage('content')}}</mat-error>
+            </mat-form-field>
+            <p class="error col-12">{{errorMessage}}</p>
+            <button class="button" (click)="sendMail()" [disabled]="!contactForm.valid">Envoyer</button>
+        </form>
+        <div class="spinner" *ngIf="isLoading">
+            <mat-spinner class="white"></mat-spinner>
+        </div>
+    </div>
+</div>

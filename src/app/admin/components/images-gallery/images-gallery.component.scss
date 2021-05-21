@@ -1,0 +1,57 @@
+@import '../../../../assets/css/global';
+
+.images-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    .background {
+      width: 8vw;
+      height: 8vw;
+      margin: 0.5vw;
+      background-color: #eee;
+      position: relative;
+      display: inline-block;
+      .delete {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--danger);
+        color: var(--danger);
+        font-size: 13px;
+        border-radius: 50%;
+        padding: 0;
+        text-align: center;
+        background-color: white;
+        &:hover {
+            color: white;
+            background-color: var(--danger);
+        }
+      }
+    }
+    .image {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: #eee;
+        &.ng-lazyloaded {
+            animation: fadein 0.5s;
+        }
+        &.loading {
+          mat-spinner {
+            margin: calc(4vw - 50px) auto;
+          }
+        }
+    }
+}
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}

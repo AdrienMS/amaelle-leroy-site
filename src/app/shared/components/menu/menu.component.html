@@ -1,0 +1,85 @@
+<header class="admin-menu" [ngClass]="{'reduced': isReduced}">
+    <div class="head">
+        <a [routerLink]="['']" routerLinkActive="router-link-active" class="link">
+            <img src="../../../../assets/images/cropped-amac3ablle-logo_2_facebook-blanc.png" alt="logo" class="logo" *ngIf="!isReduced">
+            <div class="icon" *ngIf="isReduced"><fa-icon [icon]="faHome"></fa-icon></div>
+        </a>
+    </div>
+    <ul class="content">
+        <li class="item">
+            <a [routerLink]="['/admin']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faTachometerAlt"></fa-icon></div>
+                <span>Tableau de bord</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/portfolio']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faWallet"></fa-icon></div>
+                <span>Portfolio</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/categories']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faThList"></fa-icon></div>
+                <span>Categories</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/galeries']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faThLarge"></fa-icon></div>
+                <span>Galeries</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/medias']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faPhotoVideo"></fa-icon></div>
+                <span>Médias</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/pricing']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faCamera"></fa-icon></div>
+                <span>Prestations</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/instagram']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faInstagram"></fa-icon></div>
+                <span>Instagram</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/about']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faUser"></fa-icon></div>
+                <span>À propos</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/contact']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faEnvelope"></fa-icon></div>
+                <span>Contact</span>
+            </a>
+        </li>
+        <li class="item">
+            <a [routerLink]="['/admin/miscellaneous']" routerLinkActive="router-link-active" class="link">
+                <div class="icon"><fa-icon [icon]="faCog"></fa-icon></div>
+                <span>Divers</span>
+            </a>
+        </li>
+        <li class="item">
+            <button class="btn" (click)="logout()">
+                <div class="icon"><fa-icon [icon]="faSignOutAlt"></fa-icon></div>
+                <span>Déconnexion</span>
+            </button>
+        </li>
+    </ul>
+    <div class="foot">
+        <button class="btn" (click)="toggleReduce()">
+            <div class="icon">
+                <fa-icon [icon]="faChevronCircleLeft" *ngIf="!isReduced"></fa-icon>
+                <fa-icon [icon]="faChevronCircleRight" *ngIf="isReduced"></fa-icon>
+            </div>
+            <span>Réduire le menu</span>
+        </button>
+    </div>
+</header>

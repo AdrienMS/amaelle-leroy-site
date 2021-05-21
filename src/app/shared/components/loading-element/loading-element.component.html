@@ -1,0 +1,14 @@
+<ng-container *ngIf="element === 'square'">
+    <div class="element-loading square" [ngStyle]="{'width': width, 'height': width}" [ngClass]="{'element-loading-rounded': rounded}"></div>
+</ng-container>
+<ng-container *ngIf="element === 'line'">
+    <div class="element-loading line" *ngFor="let ln of numberElement | numberToArray"  [ngStyle]="{'height': height}" [ngClass]="{'element-loading-rounded': rounded, 'short': ln === numberElement - 1 ? true : false}"></div>
+</ng-container>
+<ng-container *ngIf="element === 'rectangle'">
+    <div class="element-loading rectangle" [ngStyle]="{'width': width, 'height': height}" [ngClass]="{'element-loading-rounded': rounded}"></div>
+</ng-container>
+<ng-container *ngIf="element === 'gallery'">
+    <div class="element-loading-gallery">
+        <div class="element-loading" *ngFor="let ne of numberElement | numberToArray; let i = index" [ngStyle]="{'height': randomHeights[i]}"></div>
+    </div>
+</ng-container>

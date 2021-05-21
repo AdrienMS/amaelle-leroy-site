@@ -1,0 +1,25 @@
+@import '../../../../assets/css/global';
+
+.about-and-contact {
+    display: flex;
+    padding: 5em 0;
+    .about {
+        width: 30%;
+    }
+    .divider {
+        border-color: grey;
+    }
+    .contact {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-and-contact {
+        display: block;
+        padding: 0;
+    }
+    .divider {
+        display: none;
+    }
+}

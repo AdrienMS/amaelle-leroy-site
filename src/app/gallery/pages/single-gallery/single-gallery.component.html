@@ -1,0 +1,6 @@
+<ng-container *ngIf="(galleries$ | async) as gallery; else loadingBlock">
+    <app-gallery [gallery]="gallery[indexToDisplay]"></app-gallery>
+</ng-container>
+<ng-template #loadingBlock>
+    <app-loading-element element="gallery" numberElement="30"></app-loading-element>
+</ng-template>

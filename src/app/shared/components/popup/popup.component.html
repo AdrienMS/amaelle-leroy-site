@@ -1,0 +1,9 @@
+<span class="popup">
+    <ng-container *ngIf="data.valid">
+        <fa-icon class="valid" [icon]="faCheck"></fa-icon>
+    </ng-container>
+    <ng-container *ngIf="!data.valid">
+        <fa-icon class="error" [icon]="faTimes"></fa-icon>
+    </ng-container>
+    {{data.message}}
+</span>

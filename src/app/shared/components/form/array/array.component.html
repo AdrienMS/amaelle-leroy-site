@@ -1,0 +1,10 @@
+<ng-container [formGroup]="group">
+    <ng-container [formArrayName]="field.name">
+        <div *ngFor="let _ of formArray.controls; index as i">
+            <ng-container *ngFor="let item of field.value[i]">
+                <ng-container appDynamicField [field]="item" [group]="_">
+                </ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+</ng-container>

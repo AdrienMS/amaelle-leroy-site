@@ -1,0 +1,8 @@
+<div class="medias">
+    <div class="head">
+        <h1 class="title">Bibliothèque de médias</h1>
+        <input type="file" #file placeholder="Choose file" multiple (change)="uploadImages(file.files)" style="display:none;">
+        <button type="button" class="btn btn-success" (click)="file.click()" >Ajouter des Images</button>
+    </div>
+    <app-images-gallery [images]="(images$ | async)" [onLoading]="imageLoading"></app-images-gallery>
+</div>

@@ -1,0 +1,45 @@
+<div class="select-image" [ngClass]="{'show': displayScreen}">
+    <div class="select-image__container">
+        <div class="head">
+            <h2 class="title">Sélectionner des images</h2>
+            <input type="file" #file placeholder="Choose file" multiple (change)="uploadImages(file.files)" style="display:none;">
+            <button type="button" class="btn btn-success" (click)="file.click()" >Téléverser des Images</button>
+            <button class="btn close" (click)="cleanAndClose()"><fa-icon [icon]="faTimes"></fa-icon></button>
+        </div>
+        <div class="select-image__body">
+            <div class="background" *ngFor="let i of imageLoading | numberToArray">
+                <div class="image loading">
+                    <mat-spinner></mat-spinner>
+                </div>
+            </div>
+            <ng-container *ngIf="images$ | async">
+
+                <ng-container *ngFor="let image of paginatorImages[selectedIndexPaginator]">
+                    
+                    <div class="background" (click)="toggleSelect(image)">
+                        <div class="image" [lazyLoad]="image.thumbnail"></div>
+                        <ng-container *ngIf="selectedImages ? isExist(image) : false">
+                            <div class="overlay">
+                                <div class="index">{{ getIndex(image) + 1 }}</div>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                </ng-container>
+
+            </ng-container>
+        </div>
+        <div class="foot">
+            <div class="paginator">
+                <button class="btn left" (click)="previous()"><fa-icon [icon]="faChevronCircleLeft"></fa-icon></button>
+                <div class="page-numbers">
+                    <ng-container *ngFor="let item of paginatorImages; let i = index">
+                        <button class="btn" (click)="selectedIndexPaginator = i" [ngClass]="{'selected': i === selectedIndexPaginator}">{{i + 1}}</button>
+                    </ng-container>
+                </div>
+                <button class="btn right" (click)="next()"><fa-icon [icon]="faChevronCircleRight"></fa-icon></button>
+            </div>
+            <button class="btn validate" (click)="valid()">Valider</button>
+        </div>
+    </div>
+</div>

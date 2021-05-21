@@ -1,0 +1,19 @@
+@import '../../../../assets/css/global';
+
+.btn {
+    width: 40%;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    &.danger {
+        margin-right: 20%;
+        color: var(--danger);
+        border: 2px solid var(--danger);
+        &:hover {
+            background-color: var(--danger);
+        }
+    }
+    &:hover {
+        color: white;
+        background-color: var(--primary);
+    }
+}

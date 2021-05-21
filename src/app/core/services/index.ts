@@ -1,2 +1,16 @@
+export { AboutService } from './about.service';
+export { AnalyticsService } from './analytics.service';
+export { AuthService } from './auth.service';
+export { AuthGuardService } from './auth-guard.service';
 export { BannerService } from './banner.service';
+export { CategoriesService } from './categories.service';
+export { ComponentsService } from './components.service';
+export { ContactService } from './contact.service';
+export { GalleryService } from './gallery.service';
+export { ImagesService } from './images.service';
+export { InstaService } from './insta.service';
+export { IntroductionService } from './introduction.service';
 export { LogoService } from './logo.service';
+export { FooterService } from './miscellaneous.service';
+export { PagesService } from './pages.service';
+export { PricingService } from './pricing.service';

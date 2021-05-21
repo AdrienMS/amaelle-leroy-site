@@ -1,0 +1,94 @@
+@import '../../../../assets/css/global';
+
+.admin-menu {
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: $admin-secondary;
+    transition: .2s;
+    .head {
+        width: 100%;
+        margin: 20px 0;
+        min-height: 36px;
+        .link {
+            .logo {
+                width: 80%;
+                margin: auto;
+            }
+            .icon {
+                color: $admin-primary;
+                text-decoration: none;
+                color: #aaa;
+            }
+            &:hover {
+                .icon {
+                    color: $admin-primary;
+                }
+            }
+        }
+    }
+    .content {
+        list-style: none;
+        padding: 0;
+        .item {
+            min-height: 34px;
+            list-style: none;
+            color: #aaa;
+
+            .link {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.3;
+                padding: 0;
+                display: flex;
+                color: inherit;
+                text-decoration: none;
+            }
+            .btn {
+                width: 100%;
+                height: 34px;
+                margin: 0;
+                padding: 0;
+                background: transparent;
+                display: flex;
+                font-size: 15px;
+                color: inherit;
+            }
+            &:hover {
+                color: $admin-primary;
+            }
+        }
+    }
+    .foot {
+        position: absolute;
+        bottom: 0;
+        .btn {
+            display: flex;
+            color: #aaa;
+            padding: 0;
+            &:hover {
+                color: $admin-primary;
+            }
+        }
+    }
+
+    .icon {
+        float: left;
+        width: 36px;
+        height: 34px;
+        margin: 0;
+        text-align: center;
+    }
+
+    &.reduced {
+        width: 36px;
+        .link, .btn {
+            span {
+                display: none;
+            }
+        }
+    }
+}

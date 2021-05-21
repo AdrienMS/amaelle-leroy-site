@@ -1,13 +1,6 @@
-<!-- <img [src]="(logo$ | async)" alt="logo" class="logo"/>
-<div *ngFor="let photo of (banner$ | async), let i = index">
-    <img [src]="photo" [alt]="'photo_'+i" class="photo" [id]="'photo_'+i"/>
-</div> -->
-<ngb-carousel *ngIf="images">
-    <ng-container *ngFor="let photo of (banner$ | async), let i = index">
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img [src]="photo" [alt]="'photo_'+i" class="photo-banner">
-            </div>
-        </ng-template>
+<div class="banner">
+    <ng-container *ngIf="(banner$ | async) as banner">
+        <app-carousel [banner]="banner"></app-carousel>
+        <img [src]="(logo$ | async)" alt="logo" class="logo"/>
     </ng-container>
-  </ngb-carousel>
+</div>

@@ -1,0 +1,20 @@
+<section>
+    <div class='pricing pricing-palden'>
+        <div class="pricing-table" *ngFor="let pricing of (pricings$ | async)">
+            <div class="pricing-head">
+                <h2 class="pricing-title">{{pricing.name}}</h2>
+            </div>
+            <p class="pricing-divider">-</p>
+            <ul class="pricing-feature">
+                <li class='pricing-feature-item' *ngFor="let item of pricing.items">{{item}}</li>
+                <li class="pricing-feature-item">Le tarif n'inclue pas les éventuels frais de déplacement</li>
+                <li class="pricing-feature-item">Prix nets en euros, TVA à 0%</li>
+            </ul>
+            <p class="pricing-divider">;</p>
+            <div class="pricing-price">
+                <span class='pricing-price-currency'>€</span>{{pricing.price}}
+            </div>
+            <p class="pricing-footer">o</p>
+        </div>
+    </div>
+</section>

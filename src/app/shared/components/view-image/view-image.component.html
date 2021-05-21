@@ -1,0 +1,10 @@
+<div class="view-image" [ngClass]="{'show': image !== null}">
+    <ng-container *ngIf="image !== null">
+        <img [defaultImage]="images[image].pixelized" [lazyLoad]="images[image].full" alt="photo" class="photo"/>
+    </ng-container>
+    <div class="overlay" (click)="onClose()">
+        <button class="btn close" (click)="onClose()"><fa-icon [icon]="faTimes"></fa-icon></button>
+        <button class="btn slide left" (click)="previousImage($event)"><fa-icon [icon]="faChevronLeft"></fa-icon></button>
+        <button class="btn slide right" (click)="nextImage($event)"><fa-icon [icon]="faChevronRight"></fa-icon></button>
+    </div>
+</div>

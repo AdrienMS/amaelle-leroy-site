@@ -1,0 +1,14 @@
+.test {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    button {
+        width: 100%;
+    }
+    .full {
+        width: 50%;
+    }
+    .thumbnail {
+        width: 50%;
+    }
+}

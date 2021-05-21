@@ -1,0 +1,52 @@
+@import '../../../../assets/css/global';
+@import '../../../../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-icons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
+
+.about {
+    padding: 20px;
+    .title {
+        font-family: "Montserra";
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .right {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .content {
+        .photo-modify {
+            width: 300px;
+            position: relative;
+            .photo {
+                width: 100%;
+                transition: .5s;
+            }
+            .modify {
+                position: absolute;
+                color: $primary;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                font-size: 2rem;
+                opacity: 0;
+                transition: .5s;
+            }
+            &:hover {
+                .photo {
+                    filter: blur(5px) grayscale(100%);
+                }
+                .modify {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

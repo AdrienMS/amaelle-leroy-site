@@ -1,0 +1,91 @@
+.container-image
+    img
+        width: 100%
+        
+.black-screen
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 6
+    background-color: #000000ab
+    display: none
+    transition: .2s
+    &.show
+        display: block
+        transition: .2s
+
+.container-modify-image
+    display: none
+    width: 50%
+    position: fixed
+    max-height: 80vh
+    top: 14vh
+    left: 25%
+    background-color: var(--background)
+    z-index: 7
+    &.show
+        display: block
+
+    .header
+        display: flex
+
+        .title
+            text-transform: uppercase
+            margin: 10px 0
+            border-left: 5px solid var(--primary)
+            padding: 0 20px
+            color: var(--primary)
+            width: 90%
+
+        .icon
+            font-size: 20px
+            margin: 15px 0
+            color: var(--primary)
+            cursor: pointer
+        
+        #input_image
+            position: absolute
+            top: 0
+            left: 0
+            width: 225px
+            opacity: 0
+            padding: 14px 0
+            cursor: pointer
+
+        .input-label
+            display: block
+            font-size: 1em
+            transition: all 0.4s
+            cursor: pointer
+            text-align: center
+            padding: 20px 0
+            position: absolute
+            right: 20px
+
+    .images
+        width: 90%
+        margin: 20px 5%
+        max-height: 60vh
+        overflow: scroll
+
+        .card-image
+            margin: 10px 0
+            cursor: pointer
+            &:hover
+                img
+                    border: 5px solid var(--primary-light)
+            &.selected
+                img
+                    border: 5px solid var(--primary)
+
+            img
+                width: inherit
+                border: 5px solid white
+                border-radius: 5px
+
+    .buttons
+        .button
+            width: 30%
+            margin: 10px 10%

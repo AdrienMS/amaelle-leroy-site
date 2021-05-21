@@ -1,0 +1,12 @@
+<ng-container *ngIf="path !== null && (pages$ | async) as pages">
+    <div class="page" *ngIf="(pages | singlePage:path) as page">
+        <ng-container *ngFor="let component of page.components">
+            <ng-container *ngIf="(component | singleComponent | async) as c">
+                <app-banner *ngIf="c.type === 'banner'" [banner]="c.object"></app-banner>
+                <app-gallery *ngIf="c.type === 'gallery'" [gallery]="c.object"></app-gallery>
+                <app-galleries-list *ngIf="c.type === 'galleries-list'"></app-galleries-list>
+                <app-not-found-page *ngIf="c.type === 'not-found-page'"></app-not-found-page>
+            </ng-container>
+        </ng-container>
+    </div>
+</ng-container>

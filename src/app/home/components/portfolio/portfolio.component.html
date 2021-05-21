@@ -1,0 +1,8 @@
+<div class="portfolio">
+    <ng-container *ngIf="(portfolio$ | async) as portfolio; else loadingBlock">
+        <app-gallery [gallery]="portfolio" [isPortfolio]='true'></app-gallery>
+    </ng-container>
+    <ng-template #loadingBlock>
+        <app-loading-element element="gallery" numberElement="30"></app-loading-element>
+    </ng-template>
+</div>

@@ -1,1 +1,18 @@
-<app-banner></app-banner>
+<h1 class="title">Amaëlle Leroy - Photographe</h1>
+<h2 class="sub-title">
+    <a [routerLink]="['/galerie/Mariage']" routerLinkActive="router-link-active" class="link">Mariage</a>
+    <span class="divider">p</span>
+    <a [routerLink]="['/galerie/Naissance']" routerLinkActive="router-link-active" class="link">Naissance</a>
+    <span class="divider">p</span>
+    <a [routerLink]="['/galerie/Famille']" routerLinkActive="router-link-active" class="link">Famille</a>
+</h2>
+<app-screen></app-screen>
+<app-portfolio></app-portfolio>
+<ng-container *ngIf="(introduction$ | async) as intro; else loadingBlock">
+    <p class="text" [innerHTML]="intro | safeHtml"></p>
+</ng-container>
+<ng-template #loadingBlock>
+    <app-loading-element element="line" height="16px" numberElement="2" rounded="true"></app-loading-element>
+</ng-template>
+
+<app-instagram></app-instagram>

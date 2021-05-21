@@ -1,0 +1,20 @@
+<div class="head">
+    <h2 class="title">Qui suis-je ?</h2>
+</div>
+<div class="about">
+    <div class="container" *ngIf="(about$ | async) as about; else loadingBlock">
+        <div class="photo">
+            <img [defaultImage]="about.photo.pixelized" [lazyLoad]="about.photo.thumbnail" alt="about">
+        </div>
+        <div class="text" [innerHTML]="about.description | safeHtml">
+        </div>
+    </div>
+    <ng-template #loadingBlock>
+        <div class="container loading">
+            <app-loading-element element="square" width="225px" class="square"></app-loading-element>
+            <div class="text">
+                <app-loading-element element="line" height="14px" numberElement="4" rounded="true"></app-loading-element>
+            </div>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,14 @@
+<div class="head" *ngIf="gallery.name !== '' && !isPortfolio">
+    <h1 class="title">{{ gallery.name }}</h1>
+</div>
+<div class="gallery" #scrollableDiv>
+    <ng-container *ngFor="let photo of gallery.photos; let i = index">
+        <div class="content-photo" (click)="selectedImage = i">
+            <div class="border-on-hover top"></div>
+            <img [defaultImage]="photo.pixelized" [lazyLoad]="photo.thumbnail" [scrollTarget]="scrollableDiv" [alt]="'photo_'+i" width="200" height="200" class="photo"/>
+            <div class="border-on-hover bottom"></div>
+        </div>
+    </ng-container>
+</div>
+<app-single-pricing *ngIf="!isPortfolio" [categoryIndex]="gallery.category"></app-single-pricing>
+<app-view-image [image]="selectedImage" [images]="gallery.photos" (isClosed)="selectedImage = null"></app-view-image>

@@ -2,3 +2,373 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import './assets/css/global';
+
+@import url("./assets/fonts/Montserrat/Montserrat.css");
+
+@font-face {
+    font-family: "Photoshoot";
+    src: url("./assets/fonts/Photoshoot/Photoshoot.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Fontfabric";
+    src: url("./assets/fonts/Fontfabric/Fontfabric\ -\ Madelyn\ Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Fontfabric Fill";
+    src: url("./assets/fonts/Fontfabric/Fontfabric\ -\ Madelyn\ Fill\ Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Fontfabric Doodles";
+    src: url("./assets/fonts/Fontfabric/Fontfabric\ -\ Madelyn\ Doodles\ Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Fontfabric Doodles Fill";
+    src: url("./assets/fonts/Fontfabric/Fontfabric\ -\ Madelyn\ Doodles\ Fill\ Regular.otf") format("opentype");
+}
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: "Montserra", sans-serif;
+    font-weight: 400;
+    background-color: $background;
+    min-height: 90vh;
+    &::-webkit-scrollbar {
+        position: absolute;
+        width: 4px;
+        background-color: $secondary-dark;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $primary;
+        border-radius: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+}
+
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.head {
+    width: 100%;
+    text-align: center;
+    .title {
+        font-family: "Fontfabric";
+        font-size: 90px;
+        position: relative;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 420px) {
+    .head {
+        .title {
+            font-size: 70px;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .head {
+        .title {
+            font-size: 50px;
+        }
+    }
+}
+
+.button {
+    border: $border;
+    color: $primary;
+    padding: 5px 0;
+    background-color: $background;
+    &:hover {
+        color: #ffffff;
+        background-color: $primary;
+    }
+    &.cancel {
+        border: 1px solid $danger;
+        color: $danger;
+        &:hover {
+            background-color: $danger;
+            color: #ffffff;
+        }
+    }
+}
+
+*:focus {
+    box-shadow: none!important;
+}
+
+.mat-body, .mat-body-1, .mat-typography {
+    font-family: "Montserra", sans-serif;
+    font-weight: 400;
+}
+
+.mat-form-field {
+    font-family: "Montserra", sans-serif;
+    font-weight: 400;
+    &.mat-focused {
+        .mat-form-field-wrapper {
+            .mat-form-field-underline {
+                .mat-form-field-ripple {
+                    background-color: $primary;
+                }
+            }
+            .mat-form-field-flex {
+                .mat-form-field-infix {
+                    .mat-form-field-label-wrapper {
+                        .mat-form-field-label {
+                            color: $primary;
+                            transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+                            width: 133.3333333333%;
+                        }
+                    }
+                }
+                .mat-form-field-outline {
+                    color: $primary;
+                    .mat-form-field-outline-thick {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+  .mat-form-field-wrapper {
+        .mat-form-field-underline {
+            background-color: grey;
+        }
+        .mat-form-field-flex {
+            .mat-form-field-infix {
+                .mat-input-element {
+                    &::placeholder {
+                        color: #555;
+                    }
+                }
+                .mat-form-field-label-wrapper {
+                    .mat-form-field-label {
+                        color: grey;
+                    }
+                }
+                .mat-select {
+                    .mat-select-trigger {
+                        .mat-select-value {
+                            color: #666;
+                        }
+                        .mat-select-arrow-wrapper {
+                            .mat-select-arrow {
+                                color: #666;
+                            }
+                        }
+                    }
+                }
+                .mat-chip-list {
+                    .mat-chip-list-wrapper {
+                        flex-wrap: nowrap;
+                        flex-direction: column;
+                        .mat-standard-chip {
+                            height: fit-content;
+                        }
+                        .mat-chip-input {
+                            flex: none;
+                            width: 100%;
+                            &::placeholder {
+                                color: #555;
+                            }
+                        }
+                        .mat-select {
+                            .mat-select-trigger {
+                                .mat-select-value {
+                                    .mat-select-value-text {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .mat-form-field-outline {
+                color: #666;
+                .mat-form-field-outline-thick {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $primary;
+}
+
+.mat-tab-header {
+    .mat-tab-label-container {
+        .mat-tab-list {
+            .mat-tab-labels {
+                background-color: $background;
+            }
+        }
+    }
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: $primary;
+}
+
+.login {
+    .mat-form-field {
+        &.mat-form-field-invalid {
+            .mat-form-field-wrapper {
+                .mat-form-field-flex {
+                    border: 2px solid $danger;
+                    border-radius: 5px;
+                    padding: 5px;
+                    box-shadow: inset 0px 5px 5px $danger;
+                }
+                .mat-form-field-underline {
+                    background-color: transparent;
+                }
+            }
+        }
+        .mat-form-field-wrapper {
+            .mat-form-field-flex {
+                border: 2px solid $primary;
+                border-radius: 5px;
+                padding: 5px;
+                box-shadow: inset 0px 5px 5px $primary;
+            }
+            .mat-form-field-underline {
+                background-color: transparent;
+            }
+            .mat-form-field-subscript-wrapper {
+                .mat-error {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+.cdk-overlay-container {
+    .cdk-global-overlay-wrapper {
+        .cdk-overlay-pane {
+            .mat-snack-bar-container {
+                background-color: #212121;
+                color: white;
+            }
+        }
+    }
+}
+
+.mat-checkbox {
+    .mat-checkbox-layout {
+        .mat-checkbox-inner-container {
+            .mat-checkbox-frame {
+                border-color: $primary-5;
+            }
+        }
+    }
+    &.mat-checkbox-checked {
+        .mat-checkbox-layout {
+            .mat-checkbox-inner-container {
+                .mat-checkbox-background {
+                    background-color: $primary;
+                    .mat-checkbox-checkmark-path {
+                        stroke: #fff!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pricing-price {
+    .mat-form-field {
+        .mat-form-field-wrapper {
+            padding: 0;
+            .mat-form-field-flex {
+                .mat-form-field-infix {
+                    padding: 0;
+                    border: 0;
+                    .mat-form-field-label-wrapper {
+                        padding: 0px;
+                        top: 0;
+                        .mat-form-field-label {
+                            top: 0;
+                        }
+                    }
+                }
+            }
+            .mat-form-field-underline {
+                bottom: 0;
+            }
+        }
+    }
+}
+
+
+a.e-rte-anchor {
+    color: $primary-3;
+    &:hover {
+        color: $primary-5;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 375px) {
+    .contact {
+        .container-form {
+            .policy {
+                .mat-checkbox-label {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+
+#instafeed {
+    column-count: 4;
+    column-fill: initial;
+    column-gap: 2px;
+    width: 100%;
+    a {
+        img {
+            width: 100%;
+            margin: 1px 0;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    #instafeed {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    #instafeed {
+        column-count: 2;
+        padding: 0 3%;
+    }
+}

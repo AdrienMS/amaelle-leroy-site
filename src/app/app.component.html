@@ -1,2 +1,16 @@
-
-<router-outlet></router-outlet>
+<div class="main">
+    <ng-container *ngIf="isAdmin;else defaultContent">
+        <app-menu (reduce)="toggleAdminPanel($event)"></app-menu>
+        <div class="admin" [ngClass]="{'extend': isReduced}">
+            <router-outlet></router-outlet>
+        </div>
+    </ng-container>
+    
+    <ng-template #defaultContent>
+        <app-header></app-header>
+        <div class="site-container">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </ng-template>
+</div>

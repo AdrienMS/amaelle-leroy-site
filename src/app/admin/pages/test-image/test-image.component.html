@@ -1,0 +1,15 @@
+<div class="test">
+    <button (click)="compressFile()">Upload and compress</button>
+    <img
+      *ngIf="imgResultBeforeCompress"
+      [src]="imgResultBeforeCompress"
+      alt=""
+      class="full"
+    />
+    <img
+      *ngIf="imgResultAfterCompress"
+      [src]="imgResultAfterCompress"
+      alt=""
+      class="thumbnail"
+    />
+</div>

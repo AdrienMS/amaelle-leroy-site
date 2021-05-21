@@ -1,0 +1,35 @@
+.title {
+    font-family: "Montserra", sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+.contact {
+    display: flex;
+    height: calc(100vh - 62px);
+    .list {
+        width: 50%;
+        height: 100%;
+        overflow-y: scroll;
+        .table {
+            width: 100%;
+            tr {
+                background-color: #f5f7f7;
+                &.not-read {
+                    font-weight: bold;
+                    background-color: white;
+                }
+                &.selected {
+                    background-color: #c2dbff;
+                }
+            }
+        }
+    }
+    .content {
+        width: 50%;
+        height: 100%;
+        overflow-y: scroll;
+    }
+}

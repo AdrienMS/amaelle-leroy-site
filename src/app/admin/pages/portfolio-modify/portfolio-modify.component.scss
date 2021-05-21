@@ -1,0 +1,31 @@
+@import '../../../../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-icons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../../../../node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
+
+.text {
+    margin-top: 10px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+    .title {
+        font-size: 30px;
+        margin-bottom: 10px;
+        text-align: center;
+        &:before {
+            display: none;
+        }
+    }
+    .introduction {
+        width: 80%;
+        margin: 0 10%;
+    }
+    .btn {
+        width: 30%;
+        margin: 0 35%;
+    }
+}

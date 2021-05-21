@@ -1,0 +1,22 @@
+<!-- <div class="container-image col-3">
+    <img *ngIf="(field.value | singleImage | async) as img" [src]="img.path" [alt]="img.name" class="image" (click)="onShow()">
+</div>
+<div class="black-screen" [ngClass]="{'show': showImageSelector}"></div>
+<div class="container-modify-image" [ngClass]="{'show': showImageSelector}">
+    <div class="header">
+        <h2 class="title">Images</h2>
+        <input type="file" accept="image/*" (change)="onAddImage($event)" id="input_image" required>
+        <label for="input_image" tabindex="0" class="input-label"><fa-icon [icon]="faPlus" class="icon"></fa-icon></label>
+    </div>
+    <div class="images row">
+        <ng-container *ngFor="let image of (images$ | async); let i = index">
+            <div class="card-image coll-lg-3 col-md-4 col-6" (click)="onSelectImage(i)" [ngClass]="{'selected': isSelected[i]}">
+                <img [src]="image.path" [alt]="image.name">
+            </div>
+        </ng-container>
+    </div>
+    <div class="buttons">
+        <button type="button" class="cancel button" (click)="onCancel()">Annuler</button>
+        <button type="button" class="valid button" (click)="onValidate()" [disabled]="!isSelected">Valider</button>
+    </div>
+</div> -->

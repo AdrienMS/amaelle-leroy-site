@@ -1,0 +1,148 @@
+@import '../../../../assets/css/global';
+
+h1.title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+.right {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    .save {
+        border: 2px solid var(--green);
+        color: var(--green);
+        &:hover {
+           color: white;
+           background-color: var(--green); 
+        }
+    }
+}
+
+section {
+    padding: 2em 0 2em;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+section {
+    padding: 2em 0 2em;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+.pricing {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 3em;
+    &-table {
+        position: relative;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: stretch;
+        align-items: stretch;
+        text-align: center;
+        -webkit-flex: 0 1 330px;
+        flex: 0 1 330px;
+        .delete {
+            color: var(--danger);
+            border: 1px solid var(--danger);
+            width: 30%;
+            margin: 0 35%;
+            &:hover {
+                color: #fff;
+                background-color: var(--danger);
+            }
+        }
+    }
+    &-divider {
+        font-family: "Fontfabric Doodles";
+        font-size: 5em;
+        margin-top: 12px;
+    }
+    &-head {
+        height: 70px;
+        .pricing-title {
+            font-size: 1.5em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+    }
+    &-feature {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        height: -webkit-fill-available;
+        &-item {
+            padding: 1em 0;
+        }
+    }
+    &-price {
+        font-size: 3em;
+        font-weight: bold;
+        padding: 0;
+        margin: 0 0 0.25em 0;
+        line-height: 0.75;
+        &-currency {
+            font-size: 0.3em;
+            vertical-align: top;
+        }
+    }
+    &-footer {
+        font-family: "Fontfabric Doodles";
+        font-size: 5em;
+        line-height: .7em;
+    }
+}
+
+.info {
+    text-align: center;
+    color: #000;
+    display: grid;
+    font-style: italic;
+}
+
+.btn.fab {
+    background-color: $primary;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    font-size: 32px;
+    padding: 0;
+}
+
+.chip-modify.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+  
+.chip-modify .cdk-drop-list-dragging {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.edit {
+    &-elem {
+        .mat-chip-list-wrapper {
+            .mat-standard-chip {
+                height: fit-content;
+            }
+        }
+    }
+}

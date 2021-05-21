@@ -3,8 +3,8 @@
     "rules": "database.rules.json"
   },
   "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+    "rules": "y",
+    "indexes": "y"
   },
   "functions": {
     "predeploy": [
@@ -25,10 +25,50 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {"key": "X-Content-Type-Options", "value": "nosniff"},
+          {"key": "X-Frame-Options", "value": "ALLOW-FROM https://get.google.com"},
+          {"key": "Referrer-Policy", "value": "strict-origin"},
+          {"key": "Permissions-Policy", "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"},
+          {"key": "Cross-Origin-Embedder-Policy", "value": "unsafe-none"},
+          {"key": "Cross-Origin-Opener-Policy", "value": "unsafe-none; report-to='default'"},
+          {"key": "Cross-Origin-Resource-Policy", "value": "cross-origin"},
+          {"key": "Access-Control-Allow-Origin", "value": "*"}
+        ]
+      }
     ]
   },
   "storage": {
     "rules": "storage.rules"
   },
-  "emulators": {}
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "database": {
+      "port": 9000
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "pubsub": {
+      "port": 8085
+    },
+    "ui": {
+      "enabled": true
+    }
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
+  }
 }

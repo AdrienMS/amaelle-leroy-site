@@ -1,0 +1,12 @@
+<section class="instagram">
+    <h2 class="title">Mes photos sur Instagram</h2>
+    <ng-container *ngIf="(insta$ | async) as insta; else loadingBlock">
+        <p class="text" [innerHTML]="insta.text | safeHtml"></p>
+    </ng-container>
+    <ng-template #loadingBlock>
+        <app-loading-element element="line" height="16px" numberElement="1" rounded="true"></app-loading-element>
+    </ng-template>
+    <div class="instagram-datas">
+        <div id="instafeed"></div>
+    </div>
+</section>

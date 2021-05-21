@@ -1,0 +1,18 @@
+<footer class="footer">
+    <ng-container *ngIf="footer$ | async | singleImage | async as imageFooter">
+        <div class="photo" [defaultImage]="imageFooter.pixelized" [lazyLoad]="imageFooter.full"></div>
+    </ng-container>
+    <nav class="nav">
+        <a [routerLink]="['']" routerLinkActive="router-link-active" class="link">Portfolio</a>
+        <a [routerLink]="['/galerie']" routerLinkActive="router-link-active" class="link">Galeries</a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active" class="link logo">
+            <img lazyLoad="../../../../assets/images/cropped-amac3ablle-logo_2_facebook.png" alt="logo">
+        </a>
+        <a [routerLink]="['/pricing']" routerLinkActive="router-link-active" class="link">Préstations</a>
+        <a [routerLink]="['/contact']" routerLinkActive="router-link-active" class="link">Contact</a>
+    </nav>
+    <div class="end">
+        <p class="copyright">Copyright 2021 - Amaëlle Leroy</p>
+        <p class="creator">Site créé par : <a target="_blank" href="https://adrienmusserotte.fr">Adrien Musserotte</a></p>
+    </div>
+</footer>

@@ -1,0 +1,26 @@
+<div class="galleries-list">
+    <div class="head">
+        <h2 class="title">Galeries</h2>
+    </div>
+    <ul class="list">
+        <ng-container *ngFor="let gallery of (galleries$ | async); let i = index">
+            <li class="item" [defaultImage]="gallery.highlighted.pixelized" [lazyLoad]="gallery.highlighted.thumbnail">
+                <div class="publication" [ngClass]="{'publish': gallery.isPublish}">
+                    <fa-icon [icon]="faCheck" *ngIf="gallery.isPublish"></fa-icon>
+                    <fa-icon [icon]="faPencilRuler" *ngIf="!gallery.isPublish"></fa-icon>
+                </div>
+                <div class="name">
+                    <span>{{ gallery.name }}</span>
+                </div>
+                <div class="options">
+                    <button class="btn delete" (click)="openConfirm(i, gallery)"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+                    <div class="divider"></div>
+                    <button class="btn modify" [routerLink]="'/admin/galeries/'+i" routerLinkActive="router-link-active">
+                        <fa-icon [icon]="faPencilAlt"></fa-icon>
+                    </button>
+                </div>
+            </li>
+        </ng-container>
+    </ul>
+    <button class="btn fab" [routerLink]="'/admin/galeries/'+lengthGalleries" routerLinkActive="router-link-active"><span>+</span></button>
+</div>

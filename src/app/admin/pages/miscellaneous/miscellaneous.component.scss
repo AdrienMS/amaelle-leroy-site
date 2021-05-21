@@ -1,0 +1,12 @@
+.miscellaneaous {
+    .footer {
+        &-image {
+            width: 20vw;
+            cursor: pointer;
+            transition: all .2s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

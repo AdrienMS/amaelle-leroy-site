@@ -1,0 +1,50 @@
+@import '../../../../assets/css/global';
+
+.instagram {
+    .title {
+        font-family: "Fontfabric";
+        text-align: center;
+        font-size: 4rem;
+        padding-top: 2.5rem;
+        padding-bottom: .55rem;
+    }
+    .text {
+        text-align: center;
+        font-size: 1rem;
+        margin: 1.5rem 0;
+    }
+    &-datas {
+        max-height: 80vh;
+        overflow-y: scroll;
+        width: 80%;
+        margin: 0 10%;
+        &::-webkit-scrollbar {
+            position: absolute;
+            width: 4px;
+            background-color: $secondary-dark;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $primary;
+            border-radius: 2px;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .instagram {
+        &-datas {
+            width: 90%;
+            margin: 0 5%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram {
+        &-datas {
+            padding: 0 3%;
+            width: 100%;
+            margin: 0;
+        }
+    }
+}

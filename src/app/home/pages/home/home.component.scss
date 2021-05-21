@@ -1,0 +1,67 @@
+@import '../../../../assets/css/global';
+
+.title {
+    font-family: "Fontfabric";
+    text-align: center;
+    font-size: 5rem;
+    // margin-bottom: 20px;
+    // font-size: 72px;
+    background: linear-gradient(to right, $primary, $primary-5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    width: fit-content;
+    margin: 0 auto 0 auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.sub-title {
+    width: fit-content;
+    display: flex;
+    text-align: center;
+    font-weight: 100;
+    margin: 0 auto 30px auto;
+    .link {
+        color: #000;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: none;
+            color: $primary-5;
+        }
+    }
+    .divider {
+        font-family: 'Fontfabric Doodles';
+        color: $primary-2;
+        margin: 0 10px;
+    }
+}
+
+.text {
+    // text-align: center;
+    width: 80%;
+    margin: 30px auto;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 860px) {
+    .title {
+        font-size: 4rem;
+        line-height: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .sub-title {
+        flex-direction: column;
+    }
+}

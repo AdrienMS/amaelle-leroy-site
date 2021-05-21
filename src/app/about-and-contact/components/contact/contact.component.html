@@ -1,0 +1,50 @@
+<div class="contact-container">
+    <div class="head">
+        <h1 class="title">Me contacter</h1>
+        <p class="text">Si vous souhaitez me contacter pour une demande de préstation ou pour quelconques informations, je serais ravie d'y répondre.</p>
+    </div>
+    <div class="contact">
+        <div class="container-form">
+            <form class="form row" [formGroup]="contactForm">
+                <mat-form-field appearance="outline" class="field col-md-6 col-12">
+                    <mat-label class="label">Email</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="email" required>
+                    <mat-error *ngIf="contactForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="field col-md-6 col-12">
+                    <mat-label class="label">Nom, prénom</mat-label>
+                    <input matInput placeholder="John Doe" formControlName="name" required>
+                    <mat-error *ngIf="contactForm.get('name').invalid">{{getErrorMessage('name')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="field col-md-6 col-12">
+                    <mat-label class="label">Téléphone</mat-label>
+                    <input matInput type="tel" placeholder="01******42" formControlName="phone" required>
+                    <mat-error *ngIf="contactForm.get('phone').invalid">{{getErrorMessage('phone')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="field col-md-6 col-12">
+                    <mat-label class="label">Préstation</mat-label>
+                    <mat-select matNativeControl formControlName="pricing" required>
+                        <mat-option value="Portrait">Portrait</mat-option>
+                        <mat-option value="Famille">Famille</mat-option>
+                        <mat-option value="Mariage">Mariage</mat-option>
+                        <mat-option value="Naissance">Naissance</mat-option>
+                        <mat-option value="Couple">Couple</mat-option>
+                        <mat-option value="Autre">Autre</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="contactForm.get('pricing').invalid">{{getErrorMessage('pricing')}}</mat-error>
+                </mat-form-field>
+                <div class="mail-message content col-12" id="richtext_editor">
+                    <mat-label class="label">Votre message *</mat-label>
+                    <ejs-richtexteditor id='defaultRTE' [toolbarSettings]='tools' formControlName="content" (focus)="focusFunction()" (focusout)="focusOutFunction()" required></ejs-richtexteditor>
+                    <mat-error *ngIf="contactForm.get('content').invalid && activeErrorMessageOnContent">{{getErrorMessage('content')}}</mat-error>
+                </div>
+                <mat-checkbox class="policy" color="primary" formControlName="valid">J'ai lu et j'accepte la <a target="_blank" rel="noopener noreferrer" [routerLink]="['/policy']" routerLinkActive="router-link-active">politique de confidentialité</a></mat-checkbox>
+                <p class="error col-12">{{errorMessage}}</p>
+                <button class="button" (click)="sendMail()" [disabled]="!contactForm.valid">Envoyer</button>
+            </form>
+            <div class="spinner" *ngIf="isLoading">
+                <mat-spinner class="white"></mat-spinner>
+            </div>
+        </div>
+    </div>
+</div>

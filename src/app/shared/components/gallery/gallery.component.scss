@@ -1,0 +1,89 @@
+@import '../../../../assets/css/global';
+
+.gallery {
+    column-count: 4;
+    column-fill: initial;
+    column-gap: 2px;
+    width: 100%;
+    .content-photo {
+        position: relative;
+        cursor: pointer;
+        .photo {
+            width: 100%;
+            height: 100%;
+            margin: 1px 0;
+            cursor: pointer;
+            transition: .5s;
+            position: relative;
+        }
+        .border-on-hover {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            transition: .5s;
+            width: 0;
+            height: 0;
+            &.top {
+                top: 0;
+                left: 0;
+                border-top: 2px solid $primary;
+                border-left: 2px solid $primary;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    transition: .5s;
+                }
+            }
+            &.bottom {
+                bottom: 0;
+                right: 0;
+                border-bottom: 2px solid $primary;
+                border-right: 2px solid $primary;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    transition: .5s;
+                }
+            }
+        }
+        &:hover {
+            .border-on-hover {
+                width: 100%;
+                height: 100%;
+                &.top {
+                    &:before {
+                        background-color: $primary;
+                        opacity: .1;
+                    }
+                }
+                &.bottom {
+                    &:before {
+                        background-color: $primary;
+                        opacity: .1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .gallery {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        column-count: 2;
+        padding: 0 3%;
+    }
+}

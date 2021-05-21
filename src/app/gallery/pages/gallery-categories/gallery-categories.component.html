@@ -1,0 +1,25 @@
+<div class="head">
+    <h1 class="title">{{categoryName}}</h1>
+</div>
+<div class="galleries-list">
+    <ng-container *ngIf="(galleries$ | async) as galleries; else loadingBlock">
+        <ng-container *ngIf="galleries.length > 0; else noGalleries">
+            <ng-container *ngFor="let gallery of galleries">   
+                <a *ngIf="gallery.isPublish" [routerLink]="['/galerie/'+categoryName+'/'+gallery.url]" routerLinkActive="router-link-active" class="card" [defaultImage]="gallery.highlighted.pixelized" [lazyLoad]="gallery.highlighted.full">
+                    <div class="name">
+                        <span>{{ gallery.name }}</span>
+                    </div>
+                </a>
+            </ng-container>
+        </ng-container>
+        <ng-template #noGalleries>
+            <p class="text">Aucune galerie disponible pour ce thème</p>
+        </ng-template>
+    </ng-container>
+    <ng-template #loadingBlock>
+        <app-loading-element element="rectangle" height="160px" width="220px" rounded="true"></app-loading-element>
+        <app-loading-element element="rectangle" height="160px" width="220px" rounded="true"></app-loading-element>
+        <app-loading-element element="rectangle" height="160px" width="220px" rounded="true"></app-loading-element>
+        <app-loading-element element="rectangle" height="160px" width="220px" rounded="true"></app-loading-element>
+    </ng-template>
+</div>

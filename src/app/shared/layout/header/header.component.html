@@ -1,0 +1,91 @@
+<div class="backdrop" [ngClass]="{'active': isToggle}" (click)="closeMenu()"></div>
+<header class="menu" [ngClass]="{'active': isToggle}">
+    <div class="head">
+        <a [routerLink]="['']" routerLinkActive="router-link-active" class="link" (click)="closeMenu()">
+            <img lazyLoad="../../../../assets/images/cropped-amac3ablle-logo_2_facebook.png" alt="logo" class="logo">
+            <img lazyLoad="../../../../assets/images/cropped-amac3ablle-logo_2_facebook-blanc.png" alt="logo" class="logo-mobile">
+        </a>
+    </div>
+    <div class="content">
+        <ul class="items">
+            <li class="item">
+                <div class="background"></div>
+                <a [routerLink]="['']" routerLinkActive="router-link-active" class="link row" (click)="closeMenu()">
+                    <span class="col-9">Portfolio</span>
+                    <fa-icon [icon]="faWallet" class="col-3"></fa-icon>
+                </a>
+            </li>
+            <li class="item with-sub">
+                <div class="background"></div>
+                <button class="btn-sub-items" (click)="toggleOpenSubItems()" [ngClass]="{'open': openSubItems}">▼</button>
+                <a [routerLink]="['/galerie']" routerLinkActive="router-link-active" class="link row" (click)="closeMenu()">
+                    <span class="col-9">Galeries</span>
+                    <fa-icon [icon]="faImages" class="col-3"></fa-icon>
+                </a>
+                <div class="sub-items" [ngClass]="{'open': openSubItems}">
+                    <ul class="sub items">
+                        <li class="item" *ngFor="let category of (galleryCategories$ | async)">
+                            <div class="background-white"></div>
+                            <a [routerLink]="['/galerie/' + category.name]" routerLinkActive="router-link-active" class="link" (click)="closeMenu()">
+                                {{category.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="item">
+                <div class="background"></div>
+                <a [routerLink]="['/pricing']" routerLinkActive="router-link-active" class="link row" (click)="closeMenu()">
+                    <span class="col-9">Prestations</span>
+                    <fa-icon [icon]="faCamera" class="col-3"></fa-icon>
+                </a>
+            </li>
+            <li class="item">
+                <div class="background"></div>
+                <a [routerLink]="['/about']" routerLinkActive="router-link-active" class="link row" (click)="closeMenu()">
+                    <span class="col-9">À propos</span>
+                    <fa-icon [icon]="faInfoCircle" class="col-3"></fa-icon>
+                </a>
+            </li>
+            <li class="item">
+                <div class="background"></div>
+                <a [routerLink]="['/contact']" routerLinkActive="router-link-active" class="link row" (click)="closeMenu()">
+                    <span class="col-9">Contact</span>
+                    <fa-icon [icon]="faEnvelope" class="col-3"></fa-icon>
+                </a>
+            </li>
+            <li class="item row social">
+                <span class="col-2"></span>
+                <a target="_blank" href="https://www.facebook.com/amaelleleroyphotographie" class="link col-4" (click)="closeMenu()">
+                    <fa-icon [icon]="faFacebookF"></fa-icon>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/amaellelb/" class="link col-4" (click)="closeMenu()">
+                    <fa-icon [icon]="faInstagram"></fa-icon>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="foot row">
+        <a target="_blank" href="https://www.facebook.com/amaelleleroyphotographie" class="link col-6" (click)="closeMenu()">
+            <fa-icon [icon]="faFacebookF"></fa-icon>
+        </a>
+        <a target="_blank" href="https://www.instagram.com/amaellelb/" class="link col-6" (click)="closeMenu()">
+            <fa-icon [icon]="faInstagram"></fa-icon>
+        </a>
+    </div>
+</header>
+
+<div class="menu-mobile">
+    <button class="container-btn" [ngClass]="{'active': isToggle}" (click)="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 200 200">
+            <g stroke-width="6.5" stroke-linecap="round">
+                <path d="M72 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff"/>
+                <path d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554" fill="none" stroke="#fff"/>
+                <path d="M72 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff"/>
+                <path d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554" fill="none" stroke="#fff"/>
+                <path d="M100.75 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff"/>
+                <path d="M100.75 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff"/>
+            </g>
+        </svg>
+    </button>
+</div>

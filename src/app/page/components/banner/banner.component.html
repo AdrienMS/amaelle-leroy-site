@@ -1,0 +1,6 @@
+<div class="banner">
+    <ng-container *ngIf="banner">
+        <app-carousel [banner]="banner"></app-carousel>
+        <img [src]="(logo$ | async)" alt="logo" class="logo"/>
+    </ng-container>
+</div>

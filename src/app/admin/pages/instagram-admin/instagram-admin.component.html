@@ -1,0 +1,11 @@
+<h1 class="title">Instagram</h1>
+<div class="insta" *ngIf="insta$ | async">
+    <mat-form-field appearance="legacy" class="instagram-token">
+        <mat-label class="label">Token</mat-label>
+        <input matInput type="text" placeholder="Token" [(ngModel)]="insta.token">
+    </mat-form-field>
+    <div class="text">
+        <ejs-richtexteditor id='defaultRTE' [fontFamily]='fontFamily' [toolbarSettings]='tools' [(ngModel)]="insta.text"></ejs-richtexteditor>
+    </div>
+    <button class="btn btn-outline-primary" (click)="saveInsta()">Enregistrer</button>
+</div>

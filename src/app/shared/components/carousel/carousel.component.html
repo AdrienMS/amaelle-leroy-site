@@ -1,0 +1,31 @@
+<div class="carousel" id="carousel"
+[ngStyle]="{'height':banner.options.height === 'full' ? '100vh' : banner.options.height }"
+[ngClass]="{'shadow-caroussel': banner.options.shadow}">
+    <ng-container *ngFor="let photo of banner.photos; let i = index">
+        <div class="slide" [id]="'slide_'+i"
+        [ngStyle]="{'transform': 'translateX('+animationPosition[i]+'%)',
+                    'z-index': animationPosition[i] >= 0 && animationPosition[i] <= 100 ? '1' : '0' }">
+            <div class="background"
+            [ngStyle]="{'background-image': banner.options.background.image ? 'url('+photo+')' : 'unset',
+                        'background-color': banner.options.background.color ? banner.options.background.color : 'unset'}"
+            [ngClass]="{'blur': banner.options.background.blur}"></div>
+            <div class="photo" [ngStyle]="{'background-image': 'url('+photo+')'}"
+            [ngClass]="{'contain': banner.options.size === 'contain',
+                        'cover': banner.options.size === 'cover'}"></div>
+        </div>
+        <div class="overlay">
+            <button type="button" class="btn left" (click)="clickLeft()"
+            [ngStyle]="{'border': banner.options.overlay.border ? banner.options.overlay.borderSize : '0',
+                        'border-color': banner.options.overlay.color,
+                        'color': banner.options.overlay.color}">
+                <fa-icon [icon]="faChevronLeft"></fa-icon>
+            </button>
+            <button type="button" class="btn right" (click)="clickRight()"
+            [ngStyle]="{'border': banner.options.overlay.border ? banner.options.overlay.borderSize : '0',
+                        'border-color': banner.options.overlay.color,
+                        'color': banner.options.overlay.color}">
+                <fa-icon [icon]="faChevronRight"></fa-icon>
+            </button>
+        </div>
+    </ng-container>
+</div>

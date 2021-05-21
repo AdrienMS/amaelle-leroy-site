@@ -1,0 +1,13 @@
+<div class="images-gallery">
+    <div class="background" *ngFor="let i of onLoading | numberToArray">
+        <div class="image loading">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
+    <ng-container *ngFor="let image of images">
+        <div class="background">
+            <button class="btn delete" (click)="openConfirm(image)"><fa-icon [icon]="faMinus"></fa-icon></button>
+            <div class="image" [lazyLoad]="image.thumbnail" [defaultImage]="image.pixelized"></div>
+        </div>
+    </ng-container>
+</div>

@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent}
+  { path: '', component: HomePageComponent, data: { animationState: 'Home'}  },
+  { path: '/', component: HomePageComponent, data: { animationState: 'Home'}  }
 ];
 
 @NgModule({

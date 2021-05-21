@@ -1,0 +1,46 @@
+<!-- <app-header></app-header> -->
+<!-- <div class="card login">
+    <h2 class="title">Connexion</h2>
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="field">
+            <mat-label class="label">Email</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email" autocomplete="email" required>
+            <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+            <mat-label class="label">Mot de passe</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required class="input" formControlName="password" autocomplete="current-password" (keyup.enter)="onEnter()">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="button btn-icon">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <p class="error">{{this.errorMessage}}</p>
+        <button class="submit button" type="submit" [disabled]="loginForm.invalid">
+            <p *ngIf="!isLoading">Valider</p>
+            <mat-spinner class="loading" *ngIf="isLoading" [diameter]="20"></mat-spinner>
+        </button>
+    </form>
+</div> -->
+
+<div class="login-form">
+    <h1 class="title">Connexion</h1>
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="field">
+            <mat-label class="label">Email</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email" autocomplete="email" required>
+            <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+            <mat-label class="label">Mot de passe</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required class="input" formControlName="password" autocomplete="current-password" (keyup.enter)="onEnter()">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="button btn-icon">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <p class="error">{{this.errorMessage}}</p>
+        <button class="submit" type="submit" [disabled]="loginForm.invalid">
+            <p *ngIf="!isLoading">Valider</p>
+            <mat-spinner class="loading" *ngIf="isLoading" [diameter]="20"></mat-spinner>
+        </button>
+    </form>
+</div>

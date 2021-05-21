@@ -1,6 +1,40 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+      "about": {
+        ".read": "true",
+        ".write": "auth != null"
+      },
+      "categories": {
+        ".read": "true",
+        ".write": "auth != null"
+      },
+      "components": {
+        ".read": "true",
+        ".write": "auth != null"
+      },
+      "galleries": {
+        ".read": "true",
+        ".write": "auth != null"
+      },
+      "images": {
+        ".read": "true",
+        ".write": "auth != null"
+      },
+      "introduction": {
+      	".read": "true",
+        ".write": "auth != null"
+      },
+      "pages": {
+        ".read": "true",
+        ".write": "auth != null"
+      },
+      "portfolio": {
+        ".read": "true",
+        ".write": "auth != null"
+      },
+      "contact": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
   }
 }

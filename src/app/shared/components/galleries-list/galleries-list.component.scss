@@ -1,0 +1,40 @@
+@import '../../../../assets/css/global';
+
+.galleries-list {
+    display: flex;
+    flex-wrap: wrap;
+    .card {
+        padding: 0;
+        position: relative;
+        width: 220px;
+        height: 160px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 10px auto;
+        color: #eee;
+        font-size: 20px;
+        transition: .2s;
+        .name {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            text-align: center;
+            background-color: rgba(0,0,0,.4);
+            padding-top: 65px;
+            transition: .2s;
+            span {
+                display: block;
+                transform: translateY(-50%);
+            }
+        }
+        &:hover {
+            box-shadow: 0 0 5px 5px $primary;
+            .name {
+                opacity: 0;
+            }
+        }
+    }
+}

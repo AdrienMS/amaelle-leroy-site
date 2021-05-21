@@ -1,0 +1,8 @@
+<div class="text">
+    <h2 class="title">Texte d'introduction</h2>
+    <div class="introduction" *ngIf="introduction$ | async">
+        <ejs-richtexteditor id='defaultRTE' [fontFamily]='fontFamily' [toolbarSettings]='tools' [(ngModel)]="toModify"></ejs-richtexteditor>
+    </div>
+    <button class="btn btn-outline-primary" (click)="saveIntro()">Enregistrer</button>
+</div>
+<app-gallery-modify></app-gallery-modify>

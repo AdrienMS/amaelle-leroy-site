@@ -1,0 +1,3 @@
+Sitemap: https://amaelleleroy-325ff.web.app/assets/seo/sitemap.xml
+User-agent:*
+Allow: /

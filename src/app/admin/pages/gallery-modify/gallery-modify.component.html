@@ -1,0 +1,47 @@
+<div class="gallery-container">
+    <ng-container *ngIf="(gallery$ | async) as gallery">
+        <div class="head">
+            <h2 class="title" *ngIf="!isPortfolio">Galerie : <input type="text" [(ngModel)]="draft.name"/></h2>
+            <h2 class="title" *ngIf="isPortfolio">Portfolio</h2>
+            <h3 class="title" *ngIf="!isPortfolio">Catégorie :
+                <select matNativeControl [(ngModel)]="draft.category">
+                    <ng-container *ngFor="let category of (categories$ | async); let c = index">
+                        <option [value]="c">{{category.name}}</option>
+                    </ng-container>
+                </select>
+            </h3>
+            <div class="middle" *ngIf="!isPortfolio">
+                <button class="btn" (click)="selectSingleImage()">Image mise en avant</button>
+                <div class="highlighted" *ngIf="draft.highlighted">
+                    <img [src]="draft.highlighted.thumbnail" alt="highlighted" class="photo"/>
+                </div>
+            </div>
+            <div class="right">
+                <button class="btn save" (click)="saveDraft(gallery)" [disabled]="!activeButtons">Sauvegarder le brouillon</button>
+                <button class="btn publish" (click)="publishDraft(gallery)" [disabled]="!activeButtons">Publier le brouillon</button>
+            </div>
+        </div>
+        <div class="gallery">
+            <ng-container *ngFor="let photo of draft.photos; let i = index">
+                <div class="content-image">
+                    <button class="btn delete" (click)="deleteImage(i)"><fa-icon [icon]="faMinus"></fa-icon></button>
+                    <div class="example-custom-placeholder">
+                        <div class="add-image before">
+                            <div class="icon" (click)="addImage(i)">
+                                <fa-icon [icon]="faPlus"></fa-icon>
+                            </div>
+                        </div>
+                        <img [defaultImage]="photo.pixelized" [lazyLoad]="photo.thumbnail" class="photo" [draggable] [id]="i"/>
+                        <div class="add-image after">
+                            <div class="icon" (click)="addImage(i + 1)">
+                                <fa-icon [icon]="faPlus"></fa-icon>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+    <button class="btn fab" (click)="addImage(-1)"><span>+</span></button>
+</div>
+<app-select-image [displayScreen]='showSelectedImage' [single]='single' (emitSelectedImages)='getNewImages($event)' (closing)="toggleDisplayScreen()"></app-select-image>

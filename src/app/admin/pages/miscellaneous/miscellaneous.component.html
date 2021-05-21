@@ -1,0 +1,10 @@
+<div class="miscellaneaous">
+    <h1 class="title">Divers</h1>
+    <div class="footer">
+        <h2 class="title">Pied de page</h2>
+        <ng-container *ngIf="footer$ | async | singleImage | async as imageFooter">
+            <img [src]="imageFooter.thumbnail" alt="footer" class="footer-image" (click)="toggleDisplayScreen()">
+        </ng-container>
+    </div>
+</div>
+<app-select-image [displayScreen]='showSelectedImage' [single]='single' (emitSelectedImages)='getNewImages($event)' (closing)="toggleDisplayScreen()"></app-select-image>

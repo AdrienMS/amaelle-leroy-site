@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable, Observer } from 'rxjs';
-import { map, filter, takeUntil } from 'rxjs/operators';
 import firebase from 'firebase/app';
 import 'firebase/database';
+
+import { Banner } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BannerService {
-  public bannerSubject: Subject<Array<string>> = new Subject<Array<string>>();
+  public bannerSubject: Subject<Banner> = new Subject<Banner>();
 
   constructor() { }
 
-  public getBanner(): Observable<Array<string>> {
-    return new Observable<Array<string>>((observer: Observer<string[]>) => {
+  public getBanner(): Observable<Banner> {
+    return new Observable<Banner>((observer: Observer<Banner>) => {
       firebase.database().ref('banner/')
         .on('value', (data: firebase.database.DataSnapshot) => {
           observer.next(data.val());

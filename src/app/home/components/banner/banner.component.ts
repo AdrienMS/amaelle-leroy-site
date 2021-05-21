@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
 
-import { BannerService, LogoService } from '../../../core';
+import { BannerService, LogoService, Banner } from '../../../core';
 
 @Component({
   selector: 'app-banner',
@@ -10,10 +10,9 @@ import { BannerService, LogoService } from '../../../core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit, OnDestroy {
-  public banner$: Observable<string[]>;
+  public banner$: Observable<Banner>;
   public logo$: Observable<string>;
   private unsubscribe$: Subject<void> = new Subject<void>();
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   constructor(
     private bannerService: BannerService,
