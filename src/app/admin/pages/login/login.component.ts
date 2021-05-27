@@ -41,7 +41,6 @@ export class LoginPageComponent implements OnInit {
     if (this.loginForm.get('email').hasError('required')) {
       return 'Rentrez une adresse email';
     }
-
     return this.loginForm.get('email').hasError('email') ? 'Email non valide' : '';
   }
 
